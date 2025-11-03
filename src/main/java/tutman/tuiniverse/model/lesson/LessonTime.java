@@ -58,34 +58,6 @@ public class LessonTime implements Comparable<LessonTime> {
      */
     public static boolean isValidTime(String test) {
         return test.matches(VALIDATION_REGEX);
-        /*
-        try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(TIME_FORMAT);
-            formatter.parse(test);
-            return true;
-        } catch (DateTimeParseException e) {
-            return false;
-        }
-
-         */
-    }
-
-    /**
-     * Checks if the LocalTime start is before the LocalTime end
-     */
-    public static boolean isStartBeforeEnd(LocalTime start, LocalTime end) {
-        return start.isBefore(end);
-    }
-
-    /**
-     * Checks if the StartTime start is before the LocalTime end
-     */
-    public static boolean isValidEndTime(LocalTime start, String testEnd) {
-        if (isValidTime(testEnd)) {
-            LocalTime end = parseTime(testEnd);
-            return start.isBefore(end);
-        }
-        return false;
     }
 
     /**
